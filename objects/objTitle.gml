@@ -25,6 +25,7 @@ for (yy = 0; yy < 30; yy += 1) {
 }
 
 draw_sprite_ext(sprSpunchLogo,0,160,96,1,1,sin(wave)*8,c_white,1);
+draw_sprite_ext(sprSpunchLogo,1,160,128 + sin(wave)*4,1,1,0,c_white,1);
 #define KeyPress_13
 /*"/*'/**//* YYD ACTION
 lib_id=1
