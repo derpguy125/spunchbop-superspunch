@@ -41,6 +41,14 @@ arg5=0
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=603
+applies_to=self
+*/
+jbfmod_play_song(2)
+
+jbfmod_set_order(26)
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=224
 invert=0
 arg0=rmTest
