@@ -1,2 +1,5 @@
 |sprBob
-|sprSolidTile
++Tiles
+	|sprSolidTile
+	|sprSlopeL
+	|sprSlopeR

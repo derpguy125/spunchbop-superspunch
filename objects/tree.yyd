@@ -1,5 +1,9 @@
 +Controllers
 	|objBob
 +Tiles
-	|parSolid
-	|parSemiSolid
+	+Parents
+		|parSemiSolid
+		|parSolid
+	|objSolid
+	|objSlopeL
+	|objSlopeR
