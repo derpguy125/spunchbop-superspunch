@@ -41,8 +41,9 @@ if place_meeting(x,y+vsp,parSolid) {
 }
 y += vsp;
 
-//Do the swag
-if place_meeting(x,y+1,parSolid) ground = true;
+//tester
+if place_meeting(x,y+1,parSolid) then ground = true;
+else ground = false;
 
 //One Way Solid Colissions
 if position_meeting(round(x), round(y) + 16, parSemiSolid) && vsp > 0  {

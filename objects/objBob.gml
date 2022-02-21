@@ -18,6 +18,8 @@ dir = 1;
 acc = 0.25;
 msp = 4;
 
+moving = false;
+
 screenLocked = false;
 
 // collisions
@@ -35,9 +37,9 @@ applies_to=self
 */
 /// step
 
-player_collisions();
-
 player_movement();
+
+player_collisions();
 
 player_animate();
 #define Step_2

@@ -1,7 +1,8 @@
 +Bob
 	|sprBobIdle
 	|sprBobMove
-	|sprite6
+	|sprBobJump
+	|sprBobFall
 |sprBobMask
 +Tiles
 	|sprSolidTile

@@ -4,4 +4,5 @@ sprSlopeL
 sprSlopeR
 sprBobIdle
 sprBobMove
-sprite6
+sprBobJump
+sprBobFall
