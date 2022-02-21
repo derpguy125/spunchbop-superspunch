@@ -38,6 +38,8 @@ applies_to=self
 player_collisions();
 
 player_movement();
+
+player_animate();
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
