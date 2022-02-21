@@ -3,7 +3,7 @@ else if keyboard_check(vk_right) then hsp = 2;
 else hsp = 0;
 
 if ground and keyboard_check_pressed(ord("Z")) then {
-    vsp = -6;
+    vsp = -jmp;
     ground = false;
 }
 

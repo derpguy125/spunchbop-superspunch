@@ -12,6 +12,7 @@ vsp = 0;
 ground = true;
 
 grv = 0.2;
+jmp = 6.5;
 
 screenLocked = false;
 
@@ -33,7 +34,7 @@ applies_to=self
 player_collisions();
 
 player_movement();
-#define Step_1
+#define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
