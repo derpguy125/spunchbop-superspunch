@@ -1,10 +1,14 @@
 +Controllers
 	|objBob
+	|objInitializer
+	|objTitle
 +Tiles
 	+Parents
 		|parSemiSolid
 		|parSolid
 	|objSolid
 	|objSlopeL
+	|objLongSlopeL
 	|objSlopeR
+	|objLongSlopeR
 |cleveland
