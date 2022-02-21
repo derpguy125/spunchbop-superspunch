@@ -7,4 +7,9 @@ applies_to=self
 window_set_size(640,480);
 window_center();
 
+
+
+
+init_music();
+
 room_goto_next();
