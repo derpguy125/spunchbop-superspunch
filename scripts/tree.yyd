@@ -1,3 +1,5 @@
 +PlayerShit
 	|player_collisions
 	|player_movement
++Drawing
+	|draw_self_rounded

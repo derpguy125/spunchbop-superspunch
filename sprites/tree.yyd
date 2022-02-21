@@ -1,4 +1,6 @@
-|sprBob
++Bob
+	|sprBobIdle
+|sprBobMask
 +Tiles
 	|sprSolidTile
 	|sprSlopeL

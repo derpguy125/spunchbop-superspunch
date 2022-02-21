@@ -14,6 +14,10 @@ ground = true;
 grv = 0.2;
 jmp = 6.5;
 
+dir = 1;
+acc = 0.25;
+msp = 4;
+
 screenLocked = false;
 
 // collisions
@@ -53,3 +57,10 @@ if view_xview[0] >= room_width  - view_wview[0] then view_xview[0] = room_width 
 
 if view_yview[0] <= 0                           then view_yview[0] = 0;
 if view_yview[0] >= room_height - view_hview[0] then view_yview[0] = room_height - view_hview[0];
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_self_rounded();

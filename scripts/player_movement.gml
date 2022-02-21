@@ -1,6 +1,14 @@
-if keyboard_check(vk_left) then hsp = -2;
-else if keyboard_check(vk_right) then hsp = 2;
-else hsp = 0;
+if keyboard_check(vk_left) then {
+    dir = -1;
+    if hsp > -msp then hsp -= acc;
+} else if keyboard_check(vk_right) then {
+    dir = 1;
+    if hsp < msp then hsp += acc;
+} else {
+    if hsp > 0.5 then hsp -= acc;
+    else if hsp < -0.5 then hsp += acc;
+    else hsp = 0;
+}
 
 if ground and keyboard_check_pressed(ord("Z")) then {
     vsp = -jmp;
