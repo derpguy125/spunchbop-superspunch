@@ -1,7 +1,7 @@
 if ground then {
     if moving then {
         sprite_index = sprBobMove;
-        image_speed = max(0.1,(abs(hsp)/(msp*2)));
+        image_speed = (abs(hsp)/(msp*2));
     } else {
         sprite_index = sprBobIdle;
     }
