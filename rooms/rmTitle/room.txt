@@ -1,7 +1,7 @@
 caption=
 width=320
 height=240
-snap_x=32
+snap_x=16
 snap_y=32
 isometric=0
 roomspeed=60
