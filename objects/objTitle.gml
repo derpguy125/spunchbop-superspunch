@@ -8,8 +8,9 @@ wave = 0;
 
 jbfmod_play_song(1);
 
-
 jbfmod_set_looping(true)
+
+company = "ROBERT TEAM PRESENTS"
 
 wave2 = -320;
 
@@ -35,6 +36,9 @@ draw_set_font(fnSpongeboy);
 
 for (yy = 0; yy < 30; yy += 1) {
     draw_background_part(bgSineWave,0,(yy*8),640,8,(sin((wave + (yy/16))*2)*4)-8,(yy*8));
+}
+for (jj = 0; jj < string_length(cracktro); jj+=1) {
+    draw_text((-16+(jj*16))-(cos((wave*(sin(wave)*8)) + (jj/4)) * 4),16 + (sin((wave*(cos(wave)*8)) + (jj/4)) * 4),string_char_at(company,jj));
 }
 
 draw_sprite_ext(sprSpunchLogo,0,160,96,1,1,sin(wave)*8,c_white,1);
