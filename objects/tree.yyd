@@ -2,6 +2,7 @@
 	|objBob
 	|objInitializer
 	|objTitle
+	|objBGonly
 +Tiles
 	+Parents
 		|parSemiSolid
