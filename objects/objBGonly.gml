@@ -23,5 +23,7 @@ applies_to=self
 draw_set_font(fnSpongeboy);
 
 for (yy = 0; yy < 30; yy += 1) {
-    draw_background_part(bgSineWave,0,(yy*8),640,8,view_xview[0] + (sin((wave + (yy/16))*2)*4)-8,view_yview[0] + (yy*8));
+    for (xx = 0; xx < 80; xx += 1) {
+        draw_background_part(bgSineWave,(xx*8),(yy*8),8,8,view_xview[0] + (xx*8) + (sin((wave + (yy/16))*2)*4)-8,view_yview[0] + (yy*8) + (cos((wave + (xx/16))*2)*4));
+    }
 }
