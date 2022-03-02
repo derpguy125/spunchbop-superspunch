@@ -44,7 +44,12 @@ y += vsp;
 //tester
 if place_meeting(x,y+1,parSolid) then {
     ground = true;
-    pound = false;
+    if pound then {
+        allow_input = true;
+        pound = false;
+
+        smoke_puffs();
+    }
 }
 else ground = false;
 
@@ -55,7 +60,12 @@ if position_meeting(round(x), round(y) + 32, parSemiSolid) && vsp > 0  {
     if (vsp > 0) { //down
         y = (wall.bbox_top-1) - sprite_bbox_bottom;
         ground = true;
-        pound = false;
+        if pound then {
+            allow_input = true;
+            pound = false;
+
+            smoke_puffs();
+        }
     }
     vsp = 0;
 }

@@ -1,4 +1,4 @@
-sprBobMask
+
 sprSolidTile
 sprSlopeL
 sprSlopeR
@@ -14,3 +14,13 @@ sprNESFont
 sprSmellySolid
 sprBobPound
 
+sprBobAttack
+sprPuffOfSmonk
+maskMain
+maskBlock
+maskLarge
+maskBig
+maskMid
+maskSmall
+maskDot
+maskLines

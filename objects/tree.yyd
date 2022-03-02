@@ -1,12 +1,21 @@
++Parents
+	+Tiles
+		|parPlatform
+		|parNoAngleChangePlatform
+		|parSolid
+		|parLow
+		|parHigh
+		|parNoAngleChangeSolid
+	|parObstacle
+	|parTerrain
+	|parEnemy
+	|parSpring
 +Controllers
 	|objBob
 	|objInitializer
 	|objTitle
 	|objBGonly
 +Tiles
-	+Parents
-		|parSemiSolid
-		|parSolid
 	+Regular Solids
 		|objSolid
 		|objSlopeL
@@ -15,4 +24,7 @@
 		|objLongSlopeR
 	+semi slids
 		|objSemiSolid
-|cleveland
++Particles
+	|objSmokePuff
++Objects
+	|cleveland

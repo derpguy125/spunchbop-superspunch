@@ -1,9 +1,41 @@
 +PlayerShit
-	|player_collisions
 	|player_movement
 	|player_animate
+	+Actions
+		|x_movement
+		|jump_and_gravity
+		|ground_pound
+		|attacking
+	+Collisions
+		|player_collision_slope
+		|player_collision
+		+Main
+			|player_collision_main
+			|player_collision_main_object
+			|player_collision_platform
+		+Top
+			|player_collision_top
+			|player_collision_top_object
+		+Bottom
+			|player_collision_bottom
+			|player_collision_bottom_object
+		+Right
+			|player_collision_right
+			|player_collision_right_edge
+			|player_collision_right_limiter
+			|player_collision_right_object
+		+Left
+			|player_collision_left
+			|player_collision_left_edge
+			|player_collision_left_limiter
+			|player_collision_left_object
+	+Angle
+		|player_get_angle
+		|wrap_angle
+		|player_rotate_towards
 +Drawing
 	|draw_self_rounded
+	|smoke_puffs
 +jbfmod
 	|jbfmod_close
 	|jbfmod_close_spectrum
@@ -57,3 +89,4 @@
 +other
 	|init_music
 	|base_convert
+	|scr_clamp

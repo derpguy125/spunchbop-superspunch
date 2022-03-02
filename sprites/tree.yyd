@@ -4,7 +4,16 @@
 	|sprBobJump
 	|sprBobFall
 	|sprBobPound
-|sprBobMask
+	|sprBobAttack
+	+Masks
+		|maskBlock
+		|maskMain
+		|maskLarge
+		|maskBig
+		|maskMid
+		|maskSmall
+		|maskDot
+		|maskLines
 +Tiles
 	|sprSolidTile
 	|sprSlopeL
@@ -17,3 +26,4 @@
 	|sprSpunchLogo
 +Other
 	|sprNESFont
+	|sprPuffOfSmonk

@@ -1,6 +1,6 @@
 objBob
 objSolid
-parSemiSolid
+parPlatform
 parSolid
 objSlopeL
 objSlopeR
@@ -11,3 +11,12 @@ objInitializer
 objTitle
 objBGonly
 objSemiSolid
+objSmokePuff
+parNoAngleChangeSolid
+parNoAngleChangePlatform
+parLow
+parHigh
+parObstacle
+parTerrain
+parEnemy
+parSpring

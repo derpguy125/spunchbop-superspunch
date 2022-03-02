@@ -1,32 +1,7 @@
-if keyboard_check(vk_left) then {
-    dir = -1;
-    moving = true;
-    if hsp > -msp then hsp -= acc;
-} else if keyboard_check(vk_right) then {
-    dir = 1;
-    moving = true;
-    if hsp < msp then hsp += acc;
-} else {
-    if hsp > 0.5 then hsp -= acc;
-    else if hsp < -0.5 then hsp += acc;
-    else {
-        hsp = 0;
-        moving = false;
-    }
-}
+x_movement()
 
-if ground and keyboard_check_pressed(ord("Z")) then {
-    vsp = -jmp;
-    ground = false;
-}
+jump_and_gravity();
 
-//ground pount
+ground_pound();
 
-if pound = false and ground = false {
-    if keyboard_check_pressed(vk_down) then {
-        pound = true;
-        vsp = 8;
-    }
-}
-
-vsp += grv;
+attacking();
