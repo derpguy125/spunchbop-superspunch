@@ -52,3 +52,4 @@ jbfmod_set_pan_seperation
 jbfmod_set_paused
 jbfmod_stop_song
 init_music
+base_convert

@@ -42,16 +42,20 @@ if place_meeting(x,y+vsp,parSolid) {
 y += vsp;
 
 //tester
-if place_meeting(x,y+1,parSolid) then ground = true;
+if place_meeting(x,y+1,parSolid) then {
+    ground = true;
+    pound = false;
+}
 else ground = false;
 
 //One Way Solid Colissions
-if position_meeting(round(x), round(y) + 16, parSemiSolid) && vsp > 0  {
+if position_meeting(round(x), round(y) + 32, parSemiSolid) && vsp > 0  {
     var wall;
-    wall = instance_position(round(x), round(y) + 16, parSemiSolid);
+    wall = instance_position(round(x), round(y) + 32, parSemiSolid);
     if (vsp > 0) { //down
         y = (wall.bbox_top-1) - sprite_bbox_bottom;
         ground = true;
+        pound = false;
     }
     vsp = 0;
 }

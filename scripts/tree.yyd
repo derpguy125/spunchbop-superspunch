@@ -56,3 +56,4 @@
 	|jbfmod_stop_song
 +other
 	|init_music
+	|base_convert

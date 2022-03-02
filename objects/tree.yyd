@@ -7,9 +7,12 @@
 	+Parents
 		|parSemiSolid
 		|parSolid
-	|objSolid
-	|objSlopeL
-	|objLongSlopeL
-	|objSlopeR
-	|objLongSlopeR
+	+Regular Solids
+		|objSolid
+		|objSlopeL
+		|objLongSlopeL
+		|objSlopeR
+		|objLongSlopeR
+	+semi slids
+		|objSemiSolid
 |cleveland

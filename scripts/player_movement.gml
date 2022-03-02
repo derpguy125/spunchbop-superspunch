@@ -20,4 +20,13 @@ if ground and keyboard_check_pressed(ord("Z")) then {
     ground = false;
 }
 
+//ground pount
+
+if pound = false and ground = false {
+    if keyboard_check_pressed(vk_down) then {
+        pound = true;
+        vsp = 8;
+    }
+}
+
 vsp += grv;

@@ -3,6 +3,7 @@
 	|sprBobMove
 	|sprBobJump
 	|sprBobFall
+	|sprBobPound
 |sprBobMask
 +Tiles
 	|sprSolidTile
@@ -10,6 +11,7 @@
 	|sprLongSlopeL
 	|sprSlopeR
 	|sprLongSlopeR
+	|sprSmellySolid
 +Objects
 	|cleveland
 	|sprSpunchLogo
