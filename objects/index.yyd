@@ -20,3 +20,8 @@ parObstacle
 parTerrain
 parEnemy
 parSpring
+objQuarterPipeL
+objQuarterPipeR
+objLayerToLow
+objLayerToHigh
+objLayerSwitch

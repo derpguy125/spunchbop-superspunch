@@ -15,12 +15,15 @@
 		|maskDot
 		|maskLines
 +Tiles
-	|sprSolidTile
-	|sprSlopeL
-	|sprLongSlopeL
-	|sprSlopeR
-	|sprLongSlopeR
 	|sprSmellySolid
+	+Solid
+		|sprSolidTile
+		|sprSlopeL
+		|sprLongSlopeL
+		|sprSlopeR
+		|sprLongSlopeR
+		|sprQuarterPipe1
+		|sprQuarterPipe2
 +Objects
 	|cleveland
 	|sprSpunchLogo

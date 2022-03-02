@@ -13,11 +13,13 @@ ground = true;
 pound = false;
 
 grv = 0.2;
-jmp = 6.5;
+jmp = -6.5;
 mvs = 16;
 
 dir = 1;
 acc = 0.25;
+airAcc = 0.25;
+dacc = 0.25;
 frc = acc;
 
 top = 4;
@@ -27,6 +29,8 @@ moving = false;
 
 angle = 0;
 layer = 0;
+
+input_alarm = 0;
 
 terrain_check       = 0         // Checks the terrain group the player is colliding with.
 terrain_check_timer = 10;       // How long it takes to check.
@@ -39,8 +43,37 @@ allow_input = true;
 allow_x_movement = true;
 allow_y_movement = true;
 
-// collisions
+// input
+        key_left                =   0;
+        key_right               =   0;
+        key_up                  =   0;
+        key_down                =   0;
+        key_action              =   0;
+        key_action2             =   0;
 
+        key_left_pressed        =   0;
+        key_right_pressed       =   0;
+        key_up_pressed          =   0;
+        key_down_pressed        =   0;
+        key_action_pressed      =   0;
+        key_action2_pressed     =   0;
+
+        key_left_released       =   0;
+        key_right_released      =   0;
+        key_up_released         =   0;
+        key_down_released       =   0;
+        key_action_released     =   0;
+        key_action2_released    =   0;
+
+        assigned_key_left       = vk_left;
+        assigned_key_right      = vk_right;
+        assigned_key_up         = vk_up;
+        assigned_key_down       = vk_down;
+        assigned_key_action     = ord("Z");
+        assigned_key_action2    = ord("X");
+
+        input_lock_left = false;
+        input_lock_right = false;
 
 
 // other
@@ -48,7 +81,7 @@ allow_y_movement = true;
 attack = false;
 attackTimer = 0;
 
-spatulas = 0;
+global.spatulas = 0;
 hurt = false;
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -109,6 +142,7 @@ applies_to=self
                         hsp =   -sin(degtorad(angle)) * (vsp*1.5);
                         ground  =   true;
                         pound = false;
+                        allow_input = true;
                     } else angle = 0;
                 }
               }
@@ -141,6 +175,7 @@ applies_to=self
             vsp =   0;
             ground  =   true;
             pound =   false;
+            allow_input = true;
             //}
 
 
@@ -196,7 +231,7 @@ applies_to=self
 
 
         // fall off the ground if the edges aren't colliding
-        if (ground == true && angle != 0 &&
+        if (ground == true &&
             (player_collision_left_edge( x, y, angle ) == false || player_collision_right_edge( x, y, angle ) == false  ))
         {
             vsp =   -sin(degtorad(angle))*hsp;
@@ -237,10 +272,100 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/// player movement and input shit
+
+    // Changing Collision Layers
+    if (place_meeting(x, y, objLayerToLow))
+        layer = 0;
+    if (place_meeting(x, y, objLayerToHigh))
+        layer = 1;
+    if (place_meeting(x, y, objLayerSwitch) && ground)
+    {
+        // Swap Layers (For loops n' stuff)
+        if (hsp > 0)
+            layer = 1;
+        else
+        if (hsp < 0)
+            layer = 0;
+    }
+
+    // Input Timer/Alarm. Ignores Left or Right input while above zero.
+    // This is used to stop the player from inching up steep slopes.
+    if(input_alarm > 0)
+    {
+        input_alarm -= 1;
+    }
+
+    x_movement();
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 /// other step
 
 player_movement();
 player_animate();
+#define Step_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+/// input shit
+/* Hold */
+         if(input_lock_left == false){
+         key_left    =   keyboard_check( assigned_key_left );
+         }else{
+         key_left    =   false;
+         };
+
+         if(input_lock_right == false){
+         key_right   =   keyboard_check( assigned_key_right );
+         }else{
+         key_right   =   false;
+         }
+
+         key_up      =   keyboard_check( assigned_key_up );
+         key_down    =   keyboard_check( assigned_key_down );
+
+         key_action  =   keyboard_check( assigned_key_action );
+         key_action2 =   keyboard_check( assigned_key_action2 );
+
+         /* Press */
+         if(input_lock_left == false){
+         key_left_pressed    =   keyboard_check_pressed( assigned_key_left );
+         }else{
+         key_left_pressed    =   false;
+         };
+
+         if(input_lock_right == false){
+         key_right_pressed   =   keyboard_check_pressed( assigned_key_right );
+         }else{
+         key_right_pressed   =   false;
+         };
+
+         key_up_pressed      =   keyboard_check_pressed( assigned_key_up );
+         key_down_pressed    =   keyboard_check_pressed( assigned_key_down );
+
+         key_action_pressed  =   keyboard_check_pressed( assigned_key_action );
+         key_action2_pressed =   keyboard_check_pressed( assigned_key_action2 );
+
+         /* Release */
+         key_left_released   =   keyboard_check_released( assigned_key_left );
+         key_right_released  =   keyboard_check_released( assigned_key_right );
+
+         key_up_released     =   keyboard_check_released( assigned_key_up );
+         key_down_released   =   keyboard_check_released( assigned_key_down );
+
+         key_action_released =   keyboard_check_released( assigned_key_action );
+         key_action2_released=   keyboard_check_released( assigned_key_action2 );
+
+         //Stop Walking:
+         if(key_right && key_left){
+            key_right = false;
+            key_left  = false;
+         }
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

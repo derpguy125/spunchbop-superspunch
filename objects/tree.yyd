@@ -22,9 +22,15 @@
 		|objLongSlopeL
 		|objSlopeR
 		|objLongSlopeR
+		|objQuarterPipeL
+		|objQuarterPipeR
 	+semi slids
 		|objSemiSolid
 +Particles
 	|objSmokePuff
 +Objects
 	|cleveland
+	+LayerSwitchers
+		|objLayerToLow
+		|objLayerToHigh
+		|objLayerSwitch
